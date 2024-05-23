@@ -6,9 +6,7 @@
 #   dir2
 #   dir3
 #       dir4
-mkdir -p task/dir1
-mkdir -p task/dir2
-mkdir -p task/dir3/dir4
+mkdir -p task/dir1 task/dir2 task/dir3/dir4
 # изменяем текущую директорию на task
 cd task
 # создаём пустой файл task/dir2/empty
@@ -16,8 +14,10 @@ touch dir2/empty
 # создаём файл task/dir2/hello.sh с таким содержанием:
 # #!/bin/bash
 # echo "$1, привет!"
-echo '#!/bin/bash
-echo "$1, привет!"' > task/dir2/hello.sh
+cat << 'EOF' > task/dir2/hello.sh
+#!/bin/bash
+echo "$1, привет!"
+EOF
 
 # устанавливаем для task/dir2/hello.sh права rwxrw-r--
 chmod 764 dir2/hello.sh
