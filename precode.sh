@@ -14,7 +14,7 @@ touch dir2/empty
 # создаём файл task/dir2/hello.sh с таким содержанием:
 # #!/bin/bash
 # echo "$1, привет!"
-cat << 'EOF' > task/dir2/hello.sh
+cat << 'EOF' > dir2/hello.sh
 #!/bin/bash
 echo "$1, привет!"
 EOF
